@@ -75,13 +75,14 @@ fun HomeScreen() {
             Column(
                 modifier = Modifier.fillMaxSize()
             ) {
+                Spacer(modifier=Modifier.padding(4.dp))
                 TopAppBar()
-                Spacer(modifier=Modifier.padding(10.dp))
+               Spacer(modifier=Modifier.padding(5.dp))
                 TopCardsBar()
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = PaddingValues(
-                        top = 0.dp,
+                        top = 8.dp,
                         start = 12.dp,
                         end = 12.dp,
                         bottom = 16.dp
@@ -276,8 +277,7 @@ fun TopAppBar() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .systemBarsPadding()
-            .padding(start=8.dp,end=12.dp,top=12.dp,bottom=0.dp)
+            .padding(start=8.dp,end=12.dp,top=2.dp,bottom=0.dp)
             .border(2.dp, Color(0xFFFFC107), RoundedCornerShape(14.dp))
             .background(
                 Brush.linearGradient(
@@ -287,9 +287,9 @@ fun TopAppBar() {
                         Color(0xFF3A2200)
                     )
                 ),
-                RoundedCornerShape(14.dp)
+                RoundedCornerShape(10.dp)
             )
-            .padding(8.dp)
+            .padding(horizontal = 8.dp, vertical = 6.dp)
     ) {
 
         Row(
@@ -300,7 +300,6 @@ fun TopAppBar() {
             Box(
                 modifier = Modifier
                     .size(46.dp)
-                    .clip(RoundedCornerShape(10.dp))
                     .background(Color(0xFF0F3B3F))
                     .border(2.dp, Color(0xFF00E5FF), RoundedCornerShape(10.dp)),
                 contentAlignment = Alignment.Center
@@ -349,7 +348,6 @@ fun TopicCards(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
-
             Image(
                 painter = painterResource(imageRes),
                 contentDescription = null,
@@ -390,7 +388,8 @@ fun StatCard(label: String, value: String, modifier: Modifier) {
             .clip(RoundedCornerShape(10.dp))
             .background(Color(0xFF0F3B3F))
             .border(2.dp, Color(0xFF00E5FF), RoundedCornerShape(10.dp))
-            .padding(vertical = 6.dp),
+            .padding(vertical = 6.dp)
+            .padding(start=2.dp,top=3.dp,bottom=3.dp,end=2.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(label, color = Color(0xFFFFC107))
@@ -433,14 +432,12 @@ fun NeonActionCard(
             modifier = Modifier.fillMaxSize()
         ) {
 
-            // Top Icon
             Image(
                 painter = painterResource(icon),
                 contentDescription = null,
                 modifier = Modifier.size(34.dp)
             )
 
-            // Title
             Text(
                 text = title,
                 color = Color(0xFF00E5FF),
@@ -465,7 +462,7 @@ fun TopCards(title: String, icon: Int) {
                 .height(60.dp)
                 .padding(start = 22.dp) 
                 .border(
-                    2.dp,
+                    1.dp,
                     Color(0xFF00E5FF),
                 )
                 .background(
@@ -531,7 +528,7 @@ fun TopicCard(title: String, image: Int) {
         Text(
             text = title,
             color = Color.White,
-            fontSize = 12.sp,
+            fontSize = 8.sp,
             textAlign = TextAlign.Center,
             minLines = 2,
             maxLines = 2,
@@ -546,17 +543,17 @@ fun TopicSection(
     title: String,
     topics: List<Pair<String, Int>>
 ) {
-    Column(modifier = Modifier.padding(top = 16.dp)) {
+    Column(modifier = Modifier.padding(top = 8.dp)) {
 
         Text(
             text = title,
             color = Color.Yellow,
             fontWeight = FontWeight.Bold,
-            fontSize = 16.sp,
-            modifier = Modifier.padding(start = 16.dp)
+            fontSize = 12.sp,
+            modifier = Modifier.padding(start = 8.dp)
         )
 
-        Spacer(modifier = Modifier.height(10.dp))
+        Spacer(modifier = Modifier.height(7.dp))
 
         LazyRow(
             contentPadding = PaddingValues(start = 8.dp)
