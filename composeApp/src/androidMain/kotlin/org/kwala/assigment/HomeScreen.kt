@@ -35,6 +35,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SegmentedButtonDefaults.Icon
 import androidx.compose.material3.Text
@@ -48,6 +49,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -100,16 +102,16 @@ fun HomeScreen() {
                         TopicSection(
                             "I dare you play these topics...",
                             listOf(
-                                "Nature: Who am I" to R.drawable.nature,
+                                "Nature: Who\nam I" to R.drawable.nature,
                                 "Death" to R.drawable.death,
                                 "Phobias" to R.drawable.phob,
                                 "Superstitions &\nMyths" to R.drawable.supert,
                                 "Smallest" to R.drawable.smallest,
                                 "-logies" to R.drawable.logies,
-                                "Technology: Who am I" to R.drawable.technology,
+                                "Technology:\nWho am I" to R.drawable.technology,
                                 "Psychology" to R.drawable.psychology,
                                 "Longest,Biggest\nLargest" to R.drawable.longest,
-                                "Geography: Where\nAm I?" to R.drawable.geog
+                                "Geography:\nWhere Am I?" to R.drawable.geog
                             )
                         )
                     }
@@ -132,21 +134,21 @@ fun HomeScreen() {
                             "States of India and how much do you know?",
                             listOf(
                                 "Assam(IN)" to R.drawable.assam,
-                                "Himachal Pradesh\n(IN)" to R.drawable.himachal,
+                                "Himachal\nPradesh (IN)" to R.drawable.himachal,
                                 "Tamil Nadu(IN)" to R.drawable.tamil,
                                 "Tripura(IN)" to R.drawable.tripura,
                                 "Rajasthan(IN)" to R.drawable.rajastan,
                                 "Meghalaya" to R.drawable.meghalaya,
-                                "Bihar & Jharkhand\n(IN)" to R.drawable.bihar,
+                                "Bihar &\nJharkhand (IN)" to R.drawable.bihar,
                                 "Mizoram(IN)" to R.drawable.mizoram,
                                 "Odisha(IN)" to R.drawable.odisha,
-                                "Jammu & Kashmir\n(IN)" to R.drawable.jk,
+                                "Jammu &\nKashmir (IN)" to R.drawable.jk,
                                 "Delhi(IN)" to R.drawable.delhi,
                                 "Maharashtra(IN)" to R.drawable.maharashtra,
                                 "Goa(IN)" to R.drawable.goa,
                                 "Nagaland(IN)" to R.drawable.nagaland,
-                                "Arunachal Pradesh\n(IN)" to R.drawable.arunachal,
-                                "Andhra Pradesh &\nTelangana(IN)" to R.drawable.andrapradesh,
+                                "Arunachal\nPradesh(IN)" to R.drawable.arunachal,
+                                "Andhra Pradesh\n& Telangana(IN)" to R.drawable.andrapradesh,
                                 "Karnataka(IN)" to R.drawable.karnataka,
                                 "Gujarat(IN)" to R.drawable.gujarat,
                                 "Manipur(IN)" to R.drawable.manipur,
@@ -154,10 +156,10 @@ fun HomeScreen() {
                                 "Haryana(IN)" to R.drawable.haryana,
                                 "Punjab(IN)" to R.drawable.punjab,
                                 "Uttarakhand &\nUttar Pradesh(IN)" to R.drawable.up,
-                                "Madhya Pradesh(IN)" to R.drawable.madhya,
+                                "Madhya Pradesh\n(IN)" to R.drawable.madhya,
                                 "Kerala(IN)" to R.drawable.kerala,
-                                "West Bengal(IN)" to R.drawable.westbengal,
-                                "Andaman & Nicobar\nIslands(IN)" to R.drawable.an,
+                                "West Bengal\n(IN)" to R.drawable.westbengal,
+                                "Andaman &\nNicobarIslands(IN)" to R.drawable.an,
                             )
                         )
                     }
@@ -179,7 +181,7 @@ fun HomeScreen() {
                             listOf(
                                 "Business(IN)" to R.drawable.business,
                                 "Indian Unicorns" to R.drawable.unicorn,
-                                "World of Startups" to R.drawable.startups,
+                                "World of\nStartups" to R.drawable.startups,
                                 "Finance World" to R.drawable.finance
                             )
                         )
@@ -189,12 +191,12 @@ fun HomeScreen() {
                             "Science & Technology: Know the unknowns",
                             listOf(
                                 "Innovations and\nInventions" to R.drawable.invention,
-                                "General Chemistry" to R.drawable.generalchemistry,
+                                "General\nChemistry" to R.drawable.generalchemistry,
                                 "Human Body" to R.drawable.humanbody,
-                                "Science &Technology" to R.drawable.startups,
-                                "Computers & Internet" to R.drawable.computers,
+                                "Science &\nTechnology" to R.drawable.startups,
+                                "Computers &\nInternet" to R.drawable.computers,
                                 "General Physics" to R.drawable.physics,
-                                "Scientists & Inventors" to R.drawable.scientist,
+                                "Scientists &\nInventors" to R.drawable.scientist,
                                 "Universe" to R.drawable.universe,
                                 "General Science" to R.drawable.science,
                                 "Diseases" to R.drawable.diseases,
@@ -206,12 +208,12 @@ fun HomeScreen() {
                             "India: Past & Present",
                             listOf(
                                 "Literature(IN)" to R.drawable.literature,
-                                "Historical Figures(IN)" to R.drawable.hisfigures,
+                                "Historical\nFigures(IN)" to R.drawable.hisfigures,
                                 "History(IN)" to R.drawable.indianhistory,
                                 "Dance(IN)" to R.drawable.dance,
-                                "Famous Personalities\n(IN)" to R.drawable.famperson,
-                                "Historical Events(IN)" to R.drawable.hisevents,
-                                "Authors & Poets" to R.drawable.authorspoets
+                                "Famous\nPersonalities (IN)" to R.drawable.famperson,
+                                "Historical\nEvents(IN)" to R.drawable.hisevents,
+                                "Authors &\nPoets" to R.drawable.authorspoets
                             )
                         )
                     }
@@ -244,18 +246,18 @@ fun HomeScreen() {
                         TopicSection(
                             "I Love My India!",
                             listOf(
-                                "People & Culture(IN)" to R.drawable.peopleculture,
+                                "People &\nCulture(IN)" to R.drawable.peopleculture,
                                 "Costumes(IN)" to R.drawable.costumes,
-                                "Food & Beverages\n(IN)" to R.drawable.foodbeverage,
-                                "Folks & Tribes(IN)" to R.drawable.tribe,
-                                "Fascinating India" to R.drawable.fasindia,
-                                "Forests,Sanctuaries, Flora(IN)" to R.drawable.forest,
-                                "Festivals & Traditions\n(IN)" to R.drawable.festivalsindia,
-                                "Mountains & Hills(IN)" to R.drawable.moutain,
+                                "Food &\nBeverages(IN)" to R.drawable.foodbeverage,
+                                "Folks &\nTribes(IN)" to R.drawable.tribe,
+                                "Fascinating\nIndia" to R.drawable.fasindia,
+                                "Forests,\nSanctuaries,Flora(IN)" to R.drawable.forest,
+                                "Festivals &\nTraditions(IN)" to R.drawable.festivalsindia,
+                                "Mountains &\nHills(IN)" to R.drawable.moutain,
                                 "River, Lakes &\nOceans(IN)" to R.drawable.river,
                                 "Places(IN)" to R.drawable.placesindia,
-                                "Landmarks & Monuments\n(IN)" to R.drawable.landmarkmonu,
-                                "Cities & Towns(IN)" to R.drawable.citytown,
+                                "Landmarks &\nMonuments(IN)" to R.drawable.landmarkmonu,
+                                "Cities &\nTowns(IN)" to R.drawable.citytown,
 
                                 )
                         )
@@ -294,7 +296,7 @@ fun TopAppBar() {
                 modifier = Modifier
                     .size(48.dp)
                     .background(Color(0xFF0F3B3F))
-                    .border(1.dp, Color(0xFF00E5FF)),
+                    .border(1.dp, Color(0xFF00BCD4)),
                 contentAlignment = Alignment.Center
             ) {
                 Image(
@@ -333,7 +335,7 @@ fun TopicCards(
         modifier = modifier
             .clip(RoundedCornerShape(10.dp))
             .clickable { onClick() }
-            .border(2.dp, Color(0xFF00E5FF), RoundedCornerShape(10.dp))
+            .border(2.dp, Color(0xFF00BCD4), RoundedCornerShape(10.dp))
             .background(Color(0xFF0D2B4D))
             .padding(horizontal = 12.dp, vertical = 0.dp)
     ) {
@@ -350,7 +352,8 @@ fun TopicCards(
             Text(
                 text = title,
                 color = Color.White,
-                fontSize = 12.sp,
+                style = MaterialTheme.typography.labelSmall,
+               // fontSize = 12.sp,
                 textAlign = TextAlign.Center
             )
         }
@@ -367,7 +370,7 @@ fun TopCard(
         modifier = modifier
             .clip(RoundedCornerShape(12.dp))
             .clickable { onClick() }
-            .border(2.dp, Color(0xFF00E5FF), RoundedCornerShape(12.dp))
+            .border(2.dp, Color(0xFF00BCD4), RoundedCornerShape(12.dp))
             .background(Color(0xFF0F3B3F), RoundedCornerShape(12.dp)),
         contentAlignment = Alignment.Center,
         content = content
@@ -379,7 +382,7 @@ fun StatCard(label: String, value: String, modifier: Modifier) {
     Column(
         modifier = modifier
             .background(Color(0xFF0F3B3F))
-            .border(1.dp, Color(0xFF00E5FF))
+            .border(1.dp, Color(0xFF00BCD4))
             .padding(vertical = 6.dp, horizontal = 4.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -410,7 +413,7 @@ fun NeonActionCard(
                 width = 2.dp,
                 brush = Brush.linearGradient(
                     colors = listOf(
-                        Color(0xFF00E5FF),
+                        Color(0xFF00BCD4),
                         Color(0xFF2979FF)
                     )
                 ),
@@ -431,9 +434,10 @@ fun NeonActionCard(
 
             Text(
                 text = title,
-                color = Color(0xFF00E5FF),
+                color = Color(0xFF00BCD4),
                 fontWeight = FontWeight.Bold,
-                fontSize = 13.sp,
+                style = MaterialTheme.typography.labelLarge,
+                //fontSize = 13.sp,
                 lineHeight = 14.sp
             )
         }
@@ -449,7 +453,7 @@ fun TopCards(title: String, icon: Int, modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxWidth()
                 .height(44.dp)
-                .border(1.dp, Color(0xFF00E5FF))
+                .border(1.dp, Color(0xFF00BCD4))
                 .background(Color(0xFF0A1B3D))
                 .padding(start = 26.dp, end = 8.dp),
             verticalAlignment = Alignment.CenterVertically,
@@ -457,8 +461,9 @@ fun TopCards(title: String, icon: Int, modifier: Modifier = Modifier) {
         ) {
             Text(
                 text = title,
-                color = Color(0xFF00E5FF),
-                fontSize = 14.sp,
+                color = Color(0xFF00BCD4),
+                style = MaterialTheme.typography.titleSmall,
+               // fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
                 lineHeight = 16.sp
@@ -471,7 +476,7 @@ fun TopCards(title: String, icon: Int, modifier: Modifier = Modifier) {
             modifier = Modifier
                 .size(42.dp)
                 .align(Alignment.CenterStart)
-            .offset(x = (-10).dp)
+            .offset(x = (-15).dp)
         )
     }
 }
@@ -511,7 +516,7 @@ fun TopicCard(title: String, image: Int) {
     ) {
         Card(
             modifier = Modifier.size(80.dp),
-            border = BorderStroke(1.dp, Color(0xFF00E5FF)),
+            border = BorderStroke(1.dp, Color(0xFF00BCD4)),
             shape = RectangleShape
         ) {
             Image(
@@ -527,7 +532,8 @@ fun TopicCard(title: String, image: Int) {
         Text(
             text = title,
             color = Color.White,
-            fontSize = 10.sp,
+            style = MaterialTheme.typography.labelSmall,
+            //fontSize = 10.sp,
             textAlign = TextAlign.Center,
             minLines = 2,
             maxLines = 2,
@@ -549,7 +555,8 @@ fun TopicSection(
             text = title,
             color = Color.Yellow,
             fontWeight = FontWeight.Bold,
-            fontSize = 12.sp,
+            style = MaterialTheme.typography.labelMedium,
+            //fontSize = 12.sp,
         )
 
         Spacer(modifier = Modifier.height(8.dp))
