@@ -72,18 +72,15 @@ fun HomeScreen() {
                 modifier = Modifier.fillMaxSize()
                     .padding(top=15.dp)
             ) {
-                Spacer(modifier=Modifier.padding(5.dp))
                 TopAppBar()
-               Spacer(modifier=Modifier.padding(10.dp))
+                Spacer(modifier=Modifier.height(10.dp))
                 TopCardsBar()
-                Spacer(modifier=Modifier.padding(5.dp))
+                Spacer(modifier=Modifier.height(5.dp))
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = PaddingValues(
-                        top = 8.dp,
-                        start = 12.dp,
-                        end = 12.dp,
-                        bottom = 16.dp
+                        horizontal = 12.dp,
+                        vertical = 16.dp
                     )
                 ) {
                     item {
@@ -106,7 +103,7 @@ fun HomeScreen() {
                                 "Nature: Who am I" to R.drawable.nature,
                                 "Death" to R.drawable.death,
                                 "Phobias" to R.drawable.phob,
-                                "Superstitions & Myths" to R.drawable.supert,
+                                "Superstitions &\nMyths" to R.drawable.supert,
                                 "Smallest" to R.drawable.smallest,
                                 "-logies" to R.drawable.logies,
                                 "Technology: Who am I" to R.drawable.technology,
@@ -121,12 +118,12 @@ fun HomeScreen() {
                         TopicSection(
                             "Language Zone",
                             listOf(
-                                "Pronunciation Pitfalls" to R.drawable.pitfalls,
+                                "Pronunciation\nPitfalls" to R.drawable.pitfalls,
                                 "Prepositions" to R.drawable.prepositions,
                                 "Indian Corporate\nLingo" to R.drawable.lingo,
                                 "Confusing\nHomophones" to R.drawable.homo,
                                 "Spell bee" to R.drawable.bee,
-                                "The Tharoor Connections" to R.drawable.connection
+                                "The Tharoor\nConnections" to R.drawable.connection
                             )
                         )
                     }
@@ -135,7 +132,7 @@ fun HomeScreen() {
                             "States of India and how much do you know?",
                             listOf(
                                 "Assam(IN)" to R.drawable.assam,
-                                "Himachal Pradesh(IN)" to R.drawable.himachal,
+                                "Himachal Pradesh\n(IN)" to R.drawable.himachal,
                                 "Tamil Nadu(IN)" to R.drawable.tamil,
                                 "Tripura(IN)" to R.drawable.tripura,
                                 "Rajasthan(IN)" to R.drawable.rajastan,
@@ -148,7 +145,7 @@ fun HomeScreen() {
                                 "Maharashtra(IN)" to R.drawable.maharashtra,
                                 "Goa(IN)" to R.drawable.goa,
                                 "Nagaland(IN)" to R.drawable.nagaland,
-                                "Arunachal Pradesh(IN)" to R.drawable.arunachal,
+                                "Arunachal Pradesh\n(IN)" to R.drawable.arunachal,
                                 "Andhra Pradesh &\nTelangana(IN)" to R.drawable.andrapradesh,
                                 "Karnataka(IN)" to R.drawable.karnataka,
                                 "Gujarat(IN)" to R.drawable.gujarat,
@@ -156,7 +153,7 @@ fun HomeScreen() {
                                 "Sikkim(IN" to R.drawable.sikkim,
                                 "Haryana(IN)" to R.drawable.haryana,
                                 "Punjab(IN)" to R.drawable.punjab,
-                                "Uttarakhand & Uttar\nPradesh(IN)" to R.drawable.up,
+                                "Uttarakhand &\nUttar Pradesh(IN)" to R.drawable.up,
                                 "Madhya Pradesh(IN)" to R.drawable.madhya,
                                 "Kerala(IN)" to R.drawable.kerala,
                                 "West Bengal(IN)" to R.drawable.westbengal,
@@ -194,7 +191,7 @@ fun HomeScreen() {
                                 "Innovations and\nInventions" to R.drawable.invention,
                                 "General Chemistry" to R.drawable.generalchemistry,
                                 "Human Body" to R.drawable.humanbody,
-                                "Science and Technology" to R.drawable.startups,
+                                "Science &Technology" to R.drawable.startups,
                                 "Computers & Internet" to R.drawable.computers,
                                 "General Physics" to R.drawable.physics,
                                 "Scientists & Inventors" to R.drawable.scientist,
@@ -215,7 +212,7 @@ fun HomeScreen() {
                                 "Famous Personalities\n(IN)" to R.drawable.famperson,
                                 "Historical Events(IN)" to R.drawable.hisevents,
                                 "Authors & Poets" to R.drawable.authorspoets
-                                )
+                            )
                         )
                     }
                     item {
@@ -260,7 +257,7 @@ fun HomeScreen() {
                                 "Landmarks & Monuments\n(IN)" to R.drawable.landmarkmonu,
                                 "Cities & Towns(IN)" to R.drawable.citytown,
 
-                            )
+                                )
                         )
                     }
                 }
@@ -274,7 +271,7 @@ fun TopAppBar() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(start=8.dp,end=12.dp,top=2.dp,bottom=0.dp)
+            .padding(horizontal = 12.dp, vertical = 6.dp)
             .border(2.dp, Color(0xFFFFC107))
             .background(
                 Brush.linearGradient(
@@ -295,7 +292,7 @@ fun TopAppBar() {
         ) {
             Box(
                 modifier = Modifier
-                    .size(46.dp)
+                    .size(48.dp)
                     .background(Color(0xFF0F3B3F))
                     .border(1.dp, Color(0xFF00E5FF)),
                 contentAlignment = Alignment.Center
@@ -383,8 +380,7 @@ fun StatCard(label: String, value: String, modifier: Modifier) {
         modifier = modifier
             .background(Color(0xFF0F3B3F))
             .border(1.dp, Color(0xFF00E5FF))
-            .padding(vertical = 6.dp)
-            .padding(start=2.dp,top=3.dp,bottom=3.dp,end=2.dp),
+            .padding(vertical = 6.dp, horizontal = 4.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(label, color = Color(0xFFFFC107))
@@ -445,25 +441,19 @@ fun NeonActionCard(
 }
 
 @Composable
-fun TopCards(title: String, icon: Int) {
+fun TopCards(title: String, icon: Int, modifier: Modifier = Modifier) {
 
-    Box(
-        modifier = Modifier.width(120.dp)
-    ) {
-        Column(
+    Box(modifier = modifier) {
+
+        Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(40.dp)
-                .padding(start = 22.dp) 
-                .border(
-                    1.dp,
-                    Color(0xFF00E5FF),
-                )
-                .background(
-                    Color(0xFF0A1B3D),
-                ),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+                .height(44.dp)
+                .border(1.dp, Color(0xFF00E5FF))
+                .background(Color(0xFF0A1B3D))
+                .padding(start = 26.dp, end = 8.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
         ) {
             Text(
                 text = title,
@@ -471,7 +461,6 @@ fun TopCards(title: String, icon: Int) {
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
-                modifier = Modifier.fillMaxWidth(),
                 lineHeight = 16.sp
             )
         }
@@ -480,33 +469,48 @@ fun TopCards(title: String, icon: Int) {
             painter = painterResource(icon),
             contentDescription = null,
             modifier = Modifier
-                .size(45.dp)
+                .size(42.dp)
                 .align(Alignment.CenterStart)
-                .offset(x = (-10).dp)
+            .offset(x = (-10).dp)
         )
     }
 }
+
 @Composable
 fun TopCardsBar() {
     Row(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalArrangement = Arrangement.SpaceEvenly
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 12.dp),
+        horizontalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        TopCards("Daily\nQuiz", R.drawable.epicbg)
-        TopCards("Today's\nTopic", R.drawable.quizbg)
-        TopCards("Kwala\nExpress", R.drawable.expressbg)
-    }
+        TopCards(
+            "Daily\nQuiz",
+            R.drawable.epicbg,
+            modifier = Modifier.weight(1f)
+        )
 
+        TopCards(
+            "Today's\nTopic",
+            R.drawable.quizbg,
+            modifier = Modifier.weight(1f)
+        )
+
+        TopCards(
+            "Kwala\nExpress",
+            R.drawable.expressbg,
+            modifier = Modifier.weight(1f)
+        )
+    }
 }
 
 @Composable
 fun TopicCard(title: String, image: Int) {
     Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.padding(end = 8.dp)
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Card(
-            modifier = Modifier.size(80.dp, 80.dp),
+            modifier = Modifier.size(80.dp),
             border = BorderStroke(1.dp, Color(0xFF00E5FF)),
             shape = RectangleShape
         ) {
@@ -523,15 +527,16 @@ fun TopicCard(title: String, image: Int) {
         Text(
             text = title,
             color = Color.White,
-            fontSize = 8.sp,
+            fontSize = 10.sp,
             textAlign = TextAlign.Center,
             minLines = 2,
             maxLines = 2,
             lineHeight = 14.sp,
-            modifier = Modifier.width(80.dp)
+            modifier = Modifier.fillMaxWidth()
         )
     }
 }
+
 
 @Composable
 fun TopicSection(
@@ -545,13 +550,12 @@ fun TopicSection(
             color = Color.Yellow,
             fontWeight = FontWeight.Bold,
             fontSize = 12.sp,
-            modifier = Modifier.padding(start = 8.dp)
         )
 
-        Spacer(modifier = Modifier.height(7.dp))
+        Spacer(modifier = Modifier.height(8.dp))
 
         LazyRow(
-            contentPadding = PaddingValues(start = 8.dp)
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             items(topics) { topic ->
                 TopicCard(topic.first, topic.second)
@@ -559,6 +563,7 @@ fun TopicSection(
         }
     }
 }
+
 
 @Preview(showBackground = true)
 @Composable

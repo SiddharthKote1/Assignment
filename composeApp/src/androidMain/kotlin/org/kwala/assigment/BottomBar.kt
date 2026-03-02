@@ -25,9 +25,9 @@ fun BottomBar() {
         R.drawable.lauchbg
     )
 
-    val barGradient = Brush.verticalGradient(
+    val barGradient = Brush.horizontalGradient(
         colors = listOf(
-            Color(0xFF0A1A3A),
+            Color(0xFF4A1410),
             Color(0xFF050A18),
             Color.Black
         )
