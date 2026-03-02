@@ -61,11 +61,7 @@ fun HomeScreen() {
     Scaffold(
         bottomBar = { BottomBar() }
     ) { padding ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(padding)
-        ) {
+        Box(modifier = Modifier.fillMaxSize().padding(padding)) {
             Image(
                 painter = painterResource(R.drawable.backgroundimage),
                 contentDescription = null,
@@ -74,11 +70,13 @@ fun HomeScreen() {
             )
             Column(
                 modifier = Modifier.fillMaxSize()
+                    .padding(top=15.dp)
             ) {
-                Spacer(modifier=Modifier.padding(4.dp))
+                Spacer(modifier=Modifier.padding(5.dp))
                 TopAppBar()
-               Spacer(modifier=Modifier.padding(5.dp))
+               Spacer(modifier=Modifier.padding(10.dp))
                 TopCardsBar()
+                Spacer(modifier=Modifier.padding(5.dp))
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = PaddingValues(
@@ -88,7 +86,6 @@ fun HomeScreen() {
                         bottom = 16.dp
                     )
                 ) {
-
                     item {
                         TopicSection(
                             "Most played topics",
@@ -278,7 +275,7 @@ fun TopAppBar() {
         modifier = Modifier
             .fillMaxWidth()
             .padding(start=8.dp,end=12.dp,top=2.dp,bottom=0.dp)
-            .border(2.dp, Color(0xFFFFC107), RoundedCornerShape(14.dp))
+            .border(2.dp, Color(0xFFFFC107))
             .background(
                 Brush.linearGradient(
                     listOf(
@@ -287,7 +284,6 @@ fun TopAppBar() {
                         Color(0xFF3A2200)
                     )
                 ),
-                RoundedCornerShape(10.dp)
             )
             .padding(horizontal = 8.dp, vertical = 6.dp)
     ) {
@@ -301,7 +297,7 @@ fun TopAppBar() {
                 modifier = Modifier
                     .size(46.dp)
                     .background(Color(0xFF0F3B3F))
-                    .border(2.dp, Color(0xFF00E5FF), RoundedCornerShape(10.dp)),
+                    .border(1.dp, Color(0xFF00E5FF)),
                 contentAlignment = Alignment.Center
             ) {
                 Image(
@@ -385,9 +381,8 @@ fun TopCard(
 fun StatCard(label: String, value: String, modifier: Modifier) {
     Column(
         modifier = modifier
-            .clip(RoundedCornerShape(10.dp))
             .background(Color(0xFF0F3B3F))
-            .border(2.dp, Color(0xFF00E5FF), RoundedCornerShape(10.dp))
+            .border(1.dp, Color(0xFF00E5FF))
             .padding(vertical = 6.dp)
             .padding(start=2.dp,top=3.dp,bottom=3.dp,end=2.dp),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -404,7 +399,7 @@ fun NeonActionCard(
 ) {
     Box(
         modifier = Modifier
-            .height(90.dp)
+            .height(70.dp)
             .aspectRatio(1.4f)
             .clip(RoundedCornerShape(14.dp))
             .background(
@@ -455,11 +450,10 @@ fun TopCards(title: String, icon: Int) {
     Box(
         modifier = Modifier.width(120.dp)
     ) {
-
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(60.dp)
+                .height(40.dp)
                 .padding(start = 22.dp) 
                 .border(
                     1.dp,
@@ -486,7 +480,7 @@ fun TopCards(title: String, icon: Int) {
             painter = painterResource(icon),
             contentDescription = null,
             modifier = Modifier
-                .size(60.dp)
+                .size(45.dp)
                 .align(Alignment.CenterStart)
                 .offset(x = (-10).dp)
         )
@@ -502,6 +496,7 @@ fun TopCardsBar() {
         TopCards("Today's\nTopic", R.drawable.quizbg)
         TopCards("Kwala\nExpress", R.drawable.expressbg)
     }
+
 }
 
 @Composable
