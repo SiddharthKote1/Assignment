@@ -57,27 +57,36 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import org.intellij.lang.annotations.JdkConstants
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen() {
     Scaffold(
         bottomBar = { BottomBar() }
     ) { padding ->
-        Box(modifier = Modifier.fillMaxSize().padding(padding)) {
+
+        Box(
+            modifier = Modifier.fillMaxSize()
+        ) {
             Image(
                 painter = painterResource(R.drawable.backgroundimage),
                 contentDescription = null,
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.Crop
             )
+
             Column(
-                modifier = Modifier.fillMaxSize()
-                    .padding(top=15.dp)
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(padding)
             ) {
+
                 TopAppBar()
-                Spacer(modifier=Modifier.height(10.dp))
+
+                Spacer(modifier = Modifier.height(10.dp))
+
                 TopCardsBar()
-                Spacer(modifier=Modifier.height(5.dp))
+
+                Spacer(modifier = Modifier.height(5.dp))
+
                 LazyColumn(
                     modifier = Modifier.fillMaxSize(),
                     contentPadding = PaddingValues(
@@ -474,7 +483,7 @@ fun TopCards(title: String, icon: Int, modifier: Modifier = Modifier) {
             painter = painterResource(icon),
             contentDescription = null,
             modifier = Modifier
-                .size(42.dp)
+                .size(50.dp)
                 .align(Alignment.CenterStart)
             .offset(x = (-15).dp)
         )
